@@ -5,7 +5,7 @@ import { login, crearPost, editarPost, logout, publicarPost, verPostBlog } from 
 
 describe('Escenario 6', function () {
   it('Ver posts blog, login, editar post, logout, ver posts blog, ver detalle post', function () {
-    const randomTitle = faker.random.alpha(Math.random() * 500)
+    const randomTitle = faker.random.alpha(Math.random() * 200)
     const randomBody = faker.lorem.lines()
 
     login();

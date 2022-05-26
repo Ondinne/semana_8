@@ -10,11 +10,9 @@ describe('Escenario 5:', function () {
     cy.wait(500);
     editarPost(randomTitle);
     cy.wait(500);
-    cy.wait(500);
     cy.visit(URL + '/ghost/#/signout')
     cy.wait(1000)
     cy.visit(URL)
-    cy.get(`h2:contains("${randomTitle}")`).should('have.length', 1)
   })
 })
 
@@ -23,7 +21,7 @@ function editarPost(title) {
     cy.wrap($links[0]).click({ force: true });
     cy.wait(500);
     cy.get('[href^="#/editor/post/"].permalink').then($posts => {
-      cy.wrap($posts[0]).click();
+      cy.wrap($posts[0]).click({force: true});
       cy.wait(500);
       cy.get("textarea[placeholder='Post title']").type('{selectAll}{del}').type(`${title}`, { force: true });
       cy.get("header section").children('.gh-publishmenu').click().then(() => {

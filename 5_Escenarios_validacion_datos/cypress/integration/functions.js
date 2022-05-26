@@ -6,20 +6,27 @@ export function crearPost(titulo, contenido) {
     cy.visit(URL + '/ghost/#/editor/post');
     cy.wait(1000);
     cy.get('.gh-editor-title').type(titulo, { force: true });
+    cy.wait(1000);
     cy.get('.koenig-editor__editor-wrapper').find('[contenteditable]').type(contenido);
-    cy.get('.gh-editor-back-button').click();
+    cy.wait(3000);
+    cy.get('.gh-editor-back-button').click({ force: true });
+    cy.wait(1000);
 }
 
 // 2. Publicar un post
 export function publicarPost() {
-    cy.get('.gh-post-list-title').first().click();
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
+    cy.visit(URL + '/ghost/#/posts');
     cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
+    cy.get('.gh-post-list-title').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.epm-modal-container').find('.ember-view').click();
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.gh-publishmenu-trigger').click({ force: true });
+    cy.wait(1000);
+    cy.get('.gh-publishmenu-button').click({ force: true });
+    cy.wait(1000);
+    cy.get('.epm-modal-container').find('.ember-view').click({ force: true });
+    cy.wait(1000);
+    cy.get('.gh-editor-back-button').click({ force: true });
 }
 
 // 3. Ver los post publicados en el home del Blog
@@ -36,11 +43,12 @@ export function verPostBlog() {
 
 // 5. Editar el contenido de un post publicado
 export function editarPost(titulo, contenido) {
-    cy.get('.gh-content-entry-title').first().click();
+    cy.get('.gh-content-entry-title').first().click({ force: true });
     cy.wait(1000);
     cy.get('.gh-editor-title').type(titulo, { force: true });
+    cy.wait(3000);
     cy.get('.koenig-editor__editor-wrapper').find('[contenteditable]').type(contenido);
-    cy.get('.gh-editor-back-button').click();
+    cy.wait(3000);
 }
 
 // 6. Login
@@ -62,21 +70,21 @@ export function listarPostsAdmin() {
 export function logout() {
     cy.visit(URL + '/ghost/#/posts');
     cy.wait(1000);
-    cy.get('.gh-user-avatar').click();
+    cy.get('.gh-user-avatar').click({ force: true });
     cy.wait(1000);
-    cy.get('.user-menu-signout').click();
+    cy.get('.user-menu-signout').click({ force: true });
 }
 
 // 9. Eliminar post
 export function eliminarPost() {
     cy.visit(URL + '/ghost/#/posts');
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.settings-menu-toggle').click();
+    cy.get('.settings-menu-toggle').click({ force: true });
     cy.wait(1000);
-    cy.get('.settings-menu-delete-button').click();
+    cy.get('.settings-menu-delete-button').click({ force: true });
     cy.wait(1000);
-    cy.get('.epm-modal-container').find('.ember-view').click();
+    cy.get('.epm-modal-container').find('.ember-view').click({ force: true });
     cy.wait(1000);
 }
 
@@ -84,64 +92,64 @@ export function eliminarPost() {
 export function cambiarAccesoPost() {
     cy.visit(URL + '/ghost/#/posts');
     cy.wait(1000);
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.settings-menu-toggle > span').click();
+    cy.get('.settings-menu-toggle > span').click({ force: true });
     cy.wait(1000);
     cy.get('select').select('Members only');
     cy.wait(1000);
-    cy.get('.settings-menu-open').click();
+    cy.get('.settings-menu-open').click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
+    cy.get('.gh-publishmenu-trigger').click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
+    cy.get('.gh-publishmenu-button').click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-btn-black').click();
+    cy.get('.gh-btn-black').click({ force: true });
     cy.wait(1000);
     cy.get('.gh-editor-back-button').click({ force: true });
 }
 
 // 11. Agregar imagen al post
 export function agregarImagenPost() {
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({ force: true });
     cy.wait(1000);
     cy.get('.gh-editor-feature-image-unsplash').click({ force: true });
     cy.wait(1000);
     cy.get('.gh-unsplash-grid').find("a[href='#']").contains('Insert image').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
+    cy.get('.gh-publishmenu-trigger').click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
+    cy.get('.gh-publishmenu-button').click({ force: true });
     cy.wait(1000);
     cy.get('.epm-modal-container').find('.ember-view').click();
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.gh-editor-back-button').click({ force: true });
 }
 
 // 12. Eliminar imagen
 export function eliminarImagenPost() {
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.image-delete').first().click();
+    cy.get('.image-delete').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
+    cy.get('.gh-publishmenu-trigger').click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
+    cy.get('.gh-publishmenu-button').click({ force: true });
     cy.wait(1000);
-    cy.get('.epm-modal-container').find('.ember-view').click();
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.epm-modal-container').find('.ember-view').click({ force: true });
+    cy.get('.gh-editor-back-button').click({ force: true });
 }
 
 // 13. Despublicar el posts
 export function despublicarPost() {
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
+    cy.get('.gh-publishmenu-trigger').click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-radio-button').first().click();
+    cy.get('.gh-publishmenu-radio-button').first().click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
+    cy.get('.gh-publishmenu-button').click({ force: true });
     cy.wait(1000);
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.gh-editor-back-button').click({ force: true });
 }
 
 // 14. Cambiar contraseña
@@ -156,13 +164,13 @@ export function eliminarTodosLosPost() {
     cy.get('body').then($body => {
         if ($body.find('.gh-post-list-title').length) {
             cy.get('.gh-post-list-title').each((items) => {
-                cy.get('.gh-post-list-title').first().click();
+                cy.get('.gh-post-list-title').first().click({ force: true });
                 cy.wait(1000);
-                cy.get('.settings-menu-toggle').click();
+                cy.get('.settings-menu-toggle').click({ force: true });
                 cy.wait(1000);
-                cy.get('.settings-menu-delete-button').click();
+                cy.get('.settings-menu-delete-button').click({ force: true });
                 cy.wait(1000);
-                cy.get('.epm-modal-container').find('.ember-view').click();
+                cy.get('.epm-modal-container').find('.ember-view').click({ force: true });
                 cy.wait(1000);
                 cy.visit(URL + '/ghost/#/posts');
                 cy.wait(1000);

@@ -22,13 +22,13 @@ describe('Escenario 10:', function () {
 })
 
 function eliminarPost(title) {
-  cy.get(`h3:contains(${title})`).click().then(() => {
+  cy.get(`h3:contains(${title})`).click({force:true}).then(() => {
     cy.wait(500)
-    cy.get('button[Title="Settings"]').click()
+    cy.get('button[Title="Settings"]').click({force: true})
     cy.wait(250)
-    cy.get('button.settings-menu-delete-button').click()
+    cy.get('button.settings-menu-delete-button').click({force: true})
     cy.wait(500)
-    cy.get(".modal-footer").children(':contains("Delete")').click()
+    cy.get(".modal-footer").children(':contains("Delete")').click({force: true})
   })
 }
 

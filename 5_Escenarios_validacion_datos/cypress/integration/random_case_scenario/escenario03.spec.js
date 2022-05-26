@@ -5,7 +5,7 @@ import { crearPost, editarPost } from "../functions";
 
 describe('Escenario 3', function () {
   it('Iniciar sesión, crear un post, editarlo y listarlo', function () {
-    const randomTitle = faker.random.alpha(Math.random() * 500)
+    const randomTitle = faker.random.alpha(Math.random() * 300)
     const randomBody = faker.lorem.lines()
 
     login();

@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { URL, LOGIN_EMAIL, LOGIN_PASSWORD } from "../env";
-import { crearPost, editarPost } from "../functions";
+import { crearPost, editarPost, publicarPost } from "../functions";
 
 
 describe('Escenario 3', function () {
