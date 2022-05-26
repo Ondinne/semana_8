@@ -1,0 +1,14 @@
+Feature: Escenario 13
+
+@user1 @web
+Scenario: Como usuario inicio sesion, cuento la cantidad de posts, me desloggeo, entro al blog y la cantidad de posts publicados es igual o menor
+  Given I navigate to page "http://localhost:2368/ghost/"
+  And I wait for 3 seconds
+  When I enter email "<USERNAME>"
+  And I wait for 2 seconds
+  And I enter password "<PASSWORD>"
+  And I wait for 2 seconds
+  And I click next
+  And I wait for 2 seconds
+  And I open my posts
+  Then I compare the number of posts in admin dashboard and in blog

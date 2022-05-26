@@ -1,0 +1,23 @@
+Feature: Escenario 19
+
+@user1 @web
+Scenario: Como usuario inicio sesion, cambio mi contrasena, me desloggeo y vuelvo a iniciar sesion
+  Given I navigate to page "http://localhost:2368/ghost/"
+  And I wait for 3 seconds
+  And I enter email "<USERNAME>"
+  And I wait for 2 seconds
+  And I enter password "<PASSWORD>"
+  And I click next
+  And I wait for 2 seconds
+  And I change my password from "<PASSWORD>" to "<NEW_PASSWORD>"
+  And I wait for 2 seconds
+  And I navigate to page "http://localhost:2368/ghost/#/signout"
+  And I wait for 3 seconds
+  And I navigate to page "http://localhost:2368/ghost/"
+  And I wait for 3 seconds
+  And I enter email "<USERNAME>"
+  And I wait for 2 seconds
+  And I enter password "<NEW_PASSWORD>"
+  And I click next
+  And I wait for 2 seconds
+  Then I validate I'm in the admin dashboard

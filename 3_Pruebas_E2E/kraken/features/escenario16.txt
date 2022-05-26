@@ -1,0 +1,19 @@
+Feature: Escenario 16
+
+@user1 @web
+Scenario: Como usuario inicio sesion, borro todos los posts, me desloggeo y no hay posts disponibles en el blog
+  Given I navigate to page "http://localhost:2368/ghost/"
+  And I wait for 3 seconds
+  When I enter email "<USERNAME>"
+  And I wait for 2 seconds
+  And I enter password "<PASSWORD>"
+  And I wait for 2 seconds
+  And I click next
+  And I wait for 2 seconds
+  And I open my posts
+  And I delete all the available posts
+  And I wait for 2 seconds
+  And I logout
+  And I navigate to page "http://localhost:2368/"
+  And I wait for 2 seconds
+  Then I should not see any posts
