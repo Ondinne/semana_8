@@ -5,6 +5,28 @@
 # 1. Ejecución Pruebas manuales exploratorias
 
 # 2. Ejecución Pruebas de reconocimiento
+## 2.1 Monkey Cypress
+Ejecutar el siguiente comando en el directorio ./2_Pruebas_reconocimiento/monkey-cypress
+
+```
+npm i 
+```
+Es necesario contar con Cypress instalado, preferiblemente de forma global en el equipo. Para hacerlo:
+```
+npm install cypress -g
+```
+También es necesario contar con Node.js y npm.
+
+Tener la aplicación Ghost instalada y corriendo en el entorno local, las pruebas se ejecutaron sobre la versión 4.41.3
+
+Posteriormente, definir la URL a visitar y las credenciales de Ghost dentro del archivo ./2_Pruebas_reconocimiento/monkey-cypress/integration/monkey/monkey.js.
+
+Por último, ejecutar:
+
+```
+cypress open  
+```
+Ahora, abrir la prueba monkey.js dando doble clic sobre ella. 
 
 # 3. Ejecución Pruebas E2E
 
@@ -12,7 +34,7 @@
 
 # 5. Ejecución de escenarios de validación de datos
 
-# 5.1. Entorno inicial
+## 5.1. Entorno inicial
 Se debe instalar el proyecto ejecutando en la raíz de este:
 ```
 npm i 
@@ -26,11 +48,11 @@ También es necesario contar con Node.js y npm.
 
 Tener la aplicación Ghost instalada y corriendo en el entorno local, las pruebas se ejecutaron sobre la versión 4.41.3
 
-# 5.2. Descripción de escenarios 
+## 5.2. Descripción de escenarios 
 
 https://github.com/jcaceresf/pruebas-automatizadas-semana-7/wiki/Descripci%C3%B3n-de-escenarios
 
-# 5.3. Instrucciones para correr las pruebas 
+## 5.3. Instrucciones para correr las pruebas 
 
 Configurar el archivo env.js con los datos locales de su aplicación incluyendo el puerto, usuario y password.
 
