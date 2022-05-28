@@ -44,9 +44,10 @@ Es necesario contar con Node.js y npm.
 - Una vez en el servidor local que suele ser localhost:8080, dar click en "chromium", luego report.html y finalmente dar click en el enlace que aparece con la fecha en la que está corriendo la prueba.
 
 # 3. Ejecución Pruebas E2E
+
 Es necesario contar con Node.js y npm.
 
-## Escenarios en Cypress
+## 3.1. Escenarios en Cypress
 - Desde una consola, ubicarse en la carpeta 3_Pruebas_E2E
 - Ejecutar el comando ```npm install```
 - Ejecutar el comando ```npm i faker```
@@ -54,7 +55,7 @@ Es necesario contar con Node.js y npm.
 - Ejecutar el comando ```cypress open```
 - Una vez abierta la interafaz de cypress, dar click en el escenario que se desee ejecutar.
 
-## Escenarios en Kraken
+## 3.2. Escenarios en Kraken
 - Desde una consola, ubicarse en la carpeta 3_Pruebas_E2E\kraken>
 - Ejecutar el comando ```npm install```
 - Ejecutar el comando ```npm install -g appium```
@@ -65,6 +66,25 @@ Es necesario contar con Node.js y npm.
 - Para correr cada prueba, ejecutar el comando ```./node_modules/kraken-node/bin/kraken-node run```
 
 # 4. Ejecución VRT
+
+## 4.1. Configuración inicial
+- Es necesario contar con Node.js y npm.
+- Desde una consola, ubicarse en la carpeta 4_VRT
+- Ejecutar el comando ```npm install```
+- Ejecutar el comando ```npm i faker```
+
+## 4.2. Paso 1. Correr los escenarios en la versión 4.41.3
+- Configurar el archivo env.js con el puerto, los datos de usuario y password que tenga en su configuración local de ghost y la versión 4.41.3 según las instrucciones que aparecen en el archivo.
+- Ejecutar el comando ```cypress open```
+- Una vez abierta la interafaz de cypress, dar click en el escenario que se desee ejecutar.(correr un escenario a la vez, primero en la versión 4.41.3 y luego en la versión 3.42)
+## 4.3. Paso 2. Correr los escenarios en la versión 3.42
+- Configurar el archivo env.js con el puerto, los datos de usuario y password que tenga en su configuración local de ghost y la versión 3.42 según las instrucciones que aparecen en el archivo.
+- Ejecutar el comando ```cypress open```
+- Una vez abierta la interafaz de cypress, dar click en el escenario que se desee ejecutar.(correr un escenario a la vez, primero en la versión 4.41.3 y luego en la versión 3.42)
+
+## 4.4. Paso 3. Ejecutar el archivo index.js
+- Dar click derecho en el archivo index.js y seleccionar "Open with live server", se visualizarán los pantallazos de la VRT para el escenario ejecutado.
+
 
 # 5. Ejecución de escenarios de validación de datos
 
