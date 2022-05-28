@@ -44,13 +44,25 @@ Es necesario contar con Node.js y npm.
 - Una vez en el servidor local que suele ser localhost:8080, dar click en "chromium", luego report.html y finalmente dar click en el enlace que aparece con la fecha en la que está corriendo la prueba.
 
 # 3. Ejecución Pruebas E2E
+Es necesario contar con Node.js y npm.
 
 ## Escenarios en Cypress
 - Desde una consola, ubicarse en la carpeta 3_Pruebas_E2E
 - Ejecutar el comando ```npm install```
 - Ejecutar el comando ```npm i faker```
+- Configurar el archivo env.js con el puerto y los datos de usuario y password que tenga en su configuración local de ghost.
 - Ejecutar el comando ```cypress open```
 - Una vez abierta la interafaz de cypress, dar click en el escenario que se desee ejecutar.
+
+## Escenarios en Kraken
+- Desde una consola, ubicarse en la carpeta 3_Pruebas_E2E\kraken>
+- Ejecutar el comando ```npm install```
+- Ejecutar el comando ```npm install -g appium```
+- Ejecutar el comando ```npm install kraken-node```
+- Configurar el archivo properties.json con el puerto y los datos de usuario y password que tenga en su configuración local de ghost.
+- Ubicarse en la carpeta \3_Pruebas_E2E\kraken\features
+- Copiar el contenido del archivo .txt al archivo ghost.feature, para cada uno de los escenarios que se quieran probar.
+- Para correr cada prueba, ejecutar el comando ```./node_modules/kraken-node/bin/kraken-node run```
 
 # 4. Ejecución VRT
 
