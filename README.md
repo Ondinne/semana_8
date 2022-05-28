@@ -2,7 +2,9 @@
 - Julie Andrea Padilla González j.padillag@uniandes.edu.co
 - Julián Cáceres Florez j.caceresf@uniandes.edu.co
 
-# 1. Ejecución Pruebas manuales exploratorias
+# 1. Pruebas manuales exploratorias
+
+https://github.com/Ondinne/semana_8/wiki/Pruebas-manuales-exploratorias
 
 # 2. Ejecución Pruebas de reconocimiento
 ## 2.1 Monkey Cypress
