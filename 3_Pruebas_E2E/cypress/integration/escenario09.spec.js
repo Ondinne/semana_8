@@ -12,21 +12,15 @@ describe('Escenario 9', function () {
         let postBody = faker.random.words(12);
 
         login();
-        cy.screenshot('Escenario9_paso1_login')
         cy.wait(1000);
         crearPost(postTitle, postBody);
-        cy.screenshot('Escenario9_paso2_crearPost')
         cy.wait(1000);
         publicarPost();
-        cy.screenshot('Escenario9_paso3_publicarPost')
         cy.wait(1000);
         cambiarAccesoPost();
-        cy.screenshot('Escenario9_paso4_cambiarAccesoPost')
         cy.wait(1000);
         logout();
-        cy.screenshot('Escenario9_paso5_logout')
         cy.wait(1000);
-        listarPostsBlog(); 
-        cy.screenshot('Escenario9_paso6_listarPostsBlog')       
+        listarPostsBlog();     
     })
 })

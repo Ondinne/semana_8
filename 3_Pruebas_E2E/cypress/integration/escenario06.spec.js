@@ -15,23 +15,17 @@ describe('Escenario 6', function () {
         cy.viewport(1280, 720)
         
         login();
-        cy.screenshot('Escenario6_paso1_login')
         cy.wait(1000);
         crearPost(postTitle, postBody);
-        cy.screenshot('Escenario6_paso2_crearPost')
         cy.wait(1000);
         editarPost(' con Título editado', ' Contenido editado')
-        cy.screenshot('Escenario6_paso3_editarPost')
         cy.wait(1000);
         publicarPost();
-        cy.screenshot('Escenario6_paso4_publicarPost')
         cy.wait(1000);
         logout();
-        cy.screenshot('Escenario6_paso5_logout')
         cy.wait(1000);
         cy.visit(URL);
         cy.wait(1000);
         verPostBlog();
-        cy.screenshot('Escenario7_paso7_verPostBlog')
     })
 })

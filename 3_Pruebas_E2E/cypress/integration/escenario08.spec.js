@@ -12,12 +12,9 @@ describe('Escenario 8', function () {
         let postBody = faker.random.words(12);
 
         login();
-        cy.screenshot('Escenario8_paso1_login')
         cy.wait(1000);
         crearPost(postTitle, postBody);
-        cy.screenshot('Escenario8_paso2_crearPost')
         cy.wait(1000);
         eliminarPost();
-        cy.screenshot('Escenario8_paso3_eliminarPost')
     })
 })

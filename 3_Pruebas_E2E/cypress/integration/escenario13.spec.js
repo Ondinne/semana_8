@@ -6,22 +6,18 @@ describe('Escenario 13:', function () {
 
     login();
     cy.wait(1000);
-    cy.screenshot('01-login')
     cy.visit(URL + '/ghost/#/posts');
     cy.wait(1000)
-    cy.screenshot('02-listarPostsAdmin')
     cy.get('[href^="#/editor/post/"].permalink').then($posts => {
       const numberOfPosts = $posts.length;
       cy.visit(URL + '/ghost/#/signout')
       cy.wait(500)
-      cy.screenshot('03-logout')
       cy.visit(URL).then(() => {
         cy.wait(1000)
         cy.get('.post-card').then($showPosts => {
           const numberOfPostShown = $showPosts.length;
           console.log(numberOfPosts, numberOfPostShown)
           expect(numberOfPosts >= numberOfPostShown).to.be.true
-          cy.screenshot('04-listarPostsBlog')
         })
       })
     })
