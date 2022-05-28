@@ -8,7 +8,7 @@ Scenario: El usuario administrador inicia sesion, crea un post, visualiza el pos
   And I wait for 2 seconds
   And I enter password "<PASSWORD1>"
   And I wait for 2 seconds
-  And I click sign in
+  And I click next
   And I wait for 2 seconds
   And I click publish a post
   And I wait for 2 seconds
@@ -19,13 +19,14 @@ Scenario: El usuario administrador inicia sesion, crea un post, visualiza el pos
   And I click on the redact post body inputbox
   And I wait for 2 seconds
   And I enter post body'Este es un post de prueba'
-  And I click on the publish button
   And I wait for 2 seconds
-  And I click on the publish button again
+  And I click on "Publish" dropdown
   And I wait for 2 seconds
-  And I publish the post
+  And I click on "Publish" button
   And I wait for 2 seconds
-  And I click on posts
+  And I click on "Publish" confirmation button
+  And I wait for 2 seconds
+  And I go back to admin dashboard
   And I wait for 2 seconds
   And I click on published
   And I wait for 2 seconds

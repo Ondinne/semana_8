@@ -14,8 +14,7 @@ When('I enter password {kraken-string}', async function (password) {
 });
 
 When('I click sign in', async function() {
-    let element = await this.driver.$('/html/body/div[2]/div/main/div/div/section/form/button/span');
-    await this.driver.saveScreenshot('./screenshots/login.png');
+    let element = await this.driver.$('gh-btn-login');
     return await element.click();
 });
 
@@ -46,7 +45,6 @@ When('I enter post body{string}', async function (post_body) {
 
 When('I click on the publish button', async function () {
     let element = await this.driver.$('/html/body/div[2]/div/main/div/section/header/section/div[2]/div[1]');
-    await this.driver.saveScreenshot('./screenshots/publishPost.png');
     return await element.click();
 });
 
@@ -62,13 +60,11 @@ When('I publish the post', async function () {
 
 When('I click on posts', async function () {
     let element = await this.driver.$('/html/body/div[2]/div/main/div/section/header/div/div[1]/a');
-    await this.driver.saveScreenshot('./screenshots/postsList.png');
     return await element.click();
 });
 
 Then('I click on published', async function () {
     let element = await this.driver.$('/html/body/div[2]/div/nav[1]/div/section/div[1]/ul[2]/li[1]/div/div/ul/li[3]/a');
-    await this.driver.saveScreenshot('./screenshots/publishedPostsList.png');
     return await element.click();
 });
 
@@ -89,7 +85,6 @@ When('I enter post edited title{string}', async function (post_title) {
 
 When('I click on update', async function() {
     let element = await this.driver.$('/html/body/div[2]/div/main/div/section/header/section/div[1]/div[1]');
-    await this.driver.saveScreenshot('./screenshots/updatePost.png');
     return await element.click();
 });
 
@@ -113,19 +108,16 @@ When('I click on published2', async function () {
 
 When('I click on the profile icon', async function () {
     let element = await this.driver.$('/html/body/div[2]/div/nav[1]/div/section/div[2]/div/div/div[1]/div[1]/div');
-    await this.driver.saveScreenshot('./screenshots/dashboard.png');
     return await element.click();
 });
 
 When('I click on logout', async function () {
     let element = await this.driver.$('/html/body/div[1]/div/ul/li[9]/a');
-    await this.driver.saveScreenshot('./screenshots/logout.png');
     return await element.click();
 });
 
 Then('I see a post detail', async function () {
     let element = await this.driver.$('/html/body/div[1]/div/main/div/div/article[1]/div/a/header/h2');
-    await this.driver.saveScreenshot('./screenshots/postDetail.png');
     return await element.click();
 });
 
@@ -139,7 +131,6 @@ When('I click on options', async function () {
 
 When('I click on delete post', async function () {
     let element = await this.driver.$('/html/body/div[2]/div/main/div/div/div/div/div[2]/form/button');
-    await this.driver.saveScreenshot('./screenshots/deletePost.png');
     return await element.click();
 });
 
@@ -150,7 +141,6 @@ When('I click on delete button', async function () {
 
 When('I click on change access option', async function () {
     let element = await this.driver.$('/html/body/div[2]/div/main/div/div/div/div/div[2]/form/div[4]/div/span/select');
-    await this.driver.saveScreenshot('./screenshots/changePostAccess.png');
     return await element.click();
 });
 
