@@ -45,6 +45,11 @@ Es necesario contar con Node.js y npm.
 
 # 3. Ejecución Pruebas E2E
 
+## Escenarios en Cypress
+- Desde una consola, ubicarse en la carpeta 3_Pruebas_E2E> cypress open
+- Ejecutar el comando ```cypress open```
+- Una vez abierta la interafaz de cypress, dar click en el escenario que se desee ejecutar.
+
 # 4. Ejecución VRT
 
 # 5. Ejecución de escenarios de validación de datos
