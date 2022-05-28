@@ -11,7 +11,7 @@ import {
 } from "./functions";
 
 
-describe('Publicar post', function () {
+describe('Escenario 18', function () {
   it('login - publicar post - ver detalle post', function () {
     let randomTitle = faker.random.alpha(10)
     let randomBody = faker.lorem.lines()
