@@ -47,6 +47,7 @@ Es necesario contar con Node.js y npm.
 
 ## Escenarios en Cypress
 - Desde una consola, ubicarse en la carpeta 3_Pruebas_E2E
+- Ejecutar el comando ```npm install```
 - Ejecutar el comando ```npm i faker```
 - Ejecutar el comando ```cypress open```
 - Una vez abierta la interafaz de cypress, dar click en el escenario que se desee ejecutar.
