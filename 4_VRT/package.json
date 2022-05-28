@@ -19,5 +19,8 @@
   "homepage": "https://github.com/aomoreno10/pruebase2e#readme",
   "devDependencies": {
     "@faker-js/faker": "^6.3.1"
+  },
+  "dependencies": {
+    "faker": "^6.6.6"
   }
 }

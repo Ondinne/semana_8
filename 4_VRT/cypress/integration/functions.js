@@ -23,11 +23,11 @@ export function crearPost(titulo, contenido) {
 
 // 2. Publicar un post
 export function publicarPost() {
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({force:true});
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
+    cy.get('.gh-publishmenu-trigger').click({force:true});
     cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
+    cy.get('.gh-publishmenu-button').click({force:true});
     cy.wait(1000);
 
     cy.get('body').then(($ele) => {
@@ -45,11 +45,11 @@ export function publicarPost() {
     cy.get('body').then(($ele) => {
 
         if ($ele.find('.gh-editor-back-button').length > 0) {
-            cy.get('.gh-editor-back-button').click()
+            cy.get('.gh-editor-back-button').click({force:true})
         }
 
         if ($ele.find("a[href='#/posts/']").length > 0) {
-            cy.get("a[href='#/posts/']").first().click()
+            cy.get("a[href='#/posts/']").first().click({force:true})
         }
         
     })
@@ -62,13 +62,13 @@ export function listarPostsBlog() {
 
 // 4. Ver detalle de un post
 export function verPostBlog() {
-    cy.get('.post-card-content-link').first().click();
+    cy.get('.post-card-content-link').first().click({force:true});
     cy.wait(1000);
 }
 
 // 5. Editar el contenido de un post publicado
 export function editarPost(titulo, contenido) {
-    cy.get('.gh-content-entry-title').first().click();
+    cy.get('.gh-content-entry-title').first().click({force:true});
     cy.wait(1000);
     cy.get('.gh-editor-title').type(titulo, { force: true });
     cy.wait(1000);
@@ -80,7 +80,7 @@ export function editarPost(titulo, contenido) {
         }
 
         if ($ele.find("a[href='#/posts/']").length > 0) {
-            cy.get("a[href='#/posts/']").first().click({ force: true })
+            cy.get("a[href='#/posts/']").click({ force: true })
         }
     })
 }
@@ -107,13 +107,13 @@ export function logout() {
 
 // 9. Eliminar post
 export function eliminarPost() {
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({force:true});
     cy.wait(1000);
-    cy.get('.settings-menu-toggle').click();
+    cy.get('.settings-menu-toggle').click({force:true});
     cy.wait(1000);
-    cy.get('.settings-menu-delete-button').click();
+    cy.get('.settings-menu-delete-button').click({force:true});
     cy.wait(1000);
-    cy.get('.modal-content').find('.ember-view').click();
+    cy.get('.modal-content').find('.ember-view').click({force:true});
     cy.wait(1000);
 }
 
@@ -124,9 +124,9 @@ export function cambiarAccesoPost() {
 
 // 11. Agregar imagen al post
 export function agregarImagenPost() {
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({force:true});
     cy.wait(1000);
-    cy.get("button[title='Settings']").click();
+    cy.get("button[title='Settings']").click({force:true});
     cy.wait(1000);
     cy.get('.gh-image-uploader-unsplash').click({ force: true });
     cy.wait(1000);
@@ -137,25 +137,25 @@ export function agregarImagenPost() {
 
 // 12. Eliminar imagen
 export function eliminarImagenPost() {
-    cy.get('.gh-post-list-title').first().click();
-    cy.get("button[title='Settings']").click();
+    cy.get('.gh-post-list-title').first().click({force:true});
+    cy.get("button[title='Settings']").click({force:true});
     cy.wait(1000);
-    cy.get('.image-cancel').first().click();
+    cy.get('.image-cancel').first().click({force:true});
     cy.wait(1000);
     cy.get('.gh-editor-back-button').click({ force: true });
 }
 
 // 13. Despublicar el posts
 export function despublicarPost() {
-    cy.get('.gh-post-list-title').first().click();
+    cy.get('.gh-post-list-title').first().click({force:true});
     cy.wait(1000);
-    cy.get('.gh-publishmenu-trigger').click();
+    cy.get('.gh-publishmenu-trigger').click({force:true});
     cy.wait(1000);
-    cy.get('.gh-publishmenu-radio-button').first().click();
+    cy.get('.gh-publishmenu-radio-button').first().click({force:true});
     cy.wait(1000);
-    cy.get('.gh-publishmenu-button').click();
+    cy.get('.gh-publishmenu-button').click({force:true});
     cy.wait(1000);
-    cy.get('.gh-editor-back-button').click();
+    cy.get('.gh-editor-back-button').click({force:true});
 }
 
 // 14. Cambiar contraseña
@@ -170,13 +170,13 @@ export function eliminarTodosLosPost() {
     cy.get('body').then($body => {
         if ($body.find('.gh-post-list-title').length) {
             cy.get('.gh-post-list-title').each((items) => { 
-                cy.get('.gh-post-list-title').first().click();
+                cy.get('.gh-post-list-title').first().click({force:true});
                 cy.wait(1000);
-                cy.get("button[title='Settings']").click();
+                cy.get("button[title='Settings']").click({force:true});
                 cy.wait(1000);
-                cy.get('.settings-menu-delete-button').click();
+                cy.get('.settings-menu-delete-button').click({force:true});
                 cy.wait(1000);
-                cy.get('.modal-content').find('.ember-view').click();
+                cy.get('.modal-content').find('.ember-view').click({force:true});
                 cy.wait(1000);
 
                 cy.visit(URL + '/ghost/#/posts');

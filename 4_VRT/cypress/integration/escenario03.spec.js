@@ -48,7 +48,7 @@ describe('Escenario 3', function () {
         })
 
         //editar post
-        cy.get('.gh-content-entry-title').first().click();
+        cy.get('.gh-content-entry-title').first().click({force:true});
         cy.wait(1000);
         cy.get('.gh-editor-title').type(' con Titulo Editado', { force: true });
         cy.wait(1000);
