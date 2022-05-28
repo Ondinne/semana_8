@@ -104,7 +104,7 @@ Tener la aplicación Ghost instalada y corriendo en el entorno local, las prueba
 
 ## 5.2. Descripción de escenarios 
 
-https://github.com/jcaceresf/pruebas-automatizadas-semana-7/wiki/Descripci%C3%B3n-de-escenarios
+[https://github.com/jcaceresf/pruebas-automatizadas-semana-7/wiki/Descripci%C3%B3n-de-escenarios](https://github.com/Ondinne/semana_8/wiki/Escenarios-de-validaci%C3%B3n-de-datos)
 
 ## 5.3. Instrucciones para correr las pruebas 
 
