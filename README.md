@@ -45,9 +45,13 @@ Es necesario contar con Node.js y npm.
 
 # 3. Ejecución Pruebas E2E
 
+## Descripción de escenarios
+
+https://github.com/Ondinne/semana_8/wiki/Descripci%C3%B3n-escenarios-e2e
+
 Es necesario contar con Node.js y npm.
 
-## 3.1. Escenarios en Cypress
+## 3.1. Ejecución de escenarios en Cypress
 - Desde una consola, ubicarse en la carpeta 3_Pruebas_E2E
 - Ejecutar el comando ```npm install```
 - Ejecutar el comando ```npm i faker```
@@ -55,7 +59,7 @@ Es necesario contar con Node.js y npm.
 - Ejecutar el comando ```cypress open```
 - Una vez abierta la interafaz de cypress, dar click en el escenario que se desee ejecutar.
 
-## 3.2. Escenarios en Kraken
+## 3.2. Ejecución de escenarios en Kraken
 - Desde una consola, ubicarse en la carpeta 3_Pruebas_E2E\kraken>
 - Ejecutar el comando ```npm install```
 - Ejecutar el comando ```npm install -g appium```
