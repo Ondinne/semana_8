@@ -121,7 +121,7 @@ export function agregarImagenPost() {
     cy.wait(1000);
     cy.get('.gh-publishmenu-button').click({ force: true });
     cy.wait(1000);
-    cy.get('.epm-modal-container').find('.ember-view').click();
+    cy.get('.epm-modal-container').find('.ember-view').click({force:true});
     cy.get('.gh-editor-back-button').click({ force: true });
 }
 

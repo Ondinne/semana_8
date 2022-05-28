@@ -11,7 +11,7 @@ import {
 
 describe('Publicar post', function () {
   it('Al loggearse y crear un post sin publicarlo, no debe estar disponible en la vista de visitante', function () {
-    let randomTitle = faker.random.alpha(Math.random() * 500)
+    let randomTitle = faker.random.alpha(Math.random() * 200)
     let randomBody = faker.lorem.lines()
 
     cy.wait(1000);

@@ -1,4 +1,7 @@
 import { URL, LOGIN_EMAIL, LOGIN_PASSWORD } from "../env";
+import {
+  crearPost,
+} from "../functions";
 
 describe('Escenario 1:', () => {
   it('Al loggearse y crear un post, este está en la interfaz de admin', () => {
@@ -11,21 +14,6 @@ describe('Escenario 1:', () => {
     })
   })
 })
-
-function crearPost(title, body) {
-  cy.get("a[href='#/editor/post/']").then($links => {
-    cy.wrap($links[0]).click({ force: true });
-    cy.wait(500);
-    cy.get("textarea[placeholder='Post title']").type(title, { force: true })
-    cy.get("div[contenteditable='true']").type(body, { force: true })
-    cy.get("header section").children('.gh-publishmenu').click().then(() => {
-      cy.get(".gh-publishmenu-button").click().then(() => {
-        cy.get(".modal-footer").children('.gh-btn-black').click()
-      })
-    }
-    )
-  });
-}
 
 function login() {
   cy.visit(URL + '/ghost');

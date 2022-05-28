@@ -10,7 +10,7 @@ import {
 
 describe('Escenario 2: ', function () {
   it('Al loggearse, borrar todos los posts, crear uno nuevo y publicarlo, este se encuentra en la interfaz de admin', function () {
-    const randomTitle = faker.random.alpha(Math.random() * 500)
+    const randomTitle = faker.random.alpha(Math.random() * 200)
     const randomBody = faker.lorem.lines()
 
     cy.wait(1000);

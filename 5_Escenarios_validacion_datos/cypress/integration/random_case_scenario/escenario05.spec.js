@@ -1,36 +1,25 @@
 import { faker } from "@faker-js/faker";
 import { URL, LOGIN_EMAIL, LOGIN_PASSWORD } from "../env";
+import {
+  crearPost
+} from "../functions";
+
 
 describe('Escenario 5:', function () {
 
   it('Al loggearse, editar el título de un post y entrar como usuario, este se ha actualizado', function () {
-    const randomTitle = faker.random.alpha(Math.random() * 500)
+    const randomTitle = faker.random.alpha(Math.random() * 200)
+    const randomBody = faker.random.alpha(Math.random() * 200)
 
     login();
     cy.wait(500);
-    editarPost(randomTitle);
+    crearPost(randomTitle, randomBody);
     cy.wait(500);
     cy.visit(URL + '/ghost/#/signout')
     cy.wait(1000)
     cy.visit(URL)
   })
 })
-
-function editarPost(title) {
-  cy.get("a[href='#/posts/']").then($links => {
-    cy.wrap($links[0]).click({ force: true });
-    cy.wait(500);
-    cy.get('[href^="#/editor/post/"].permalink').then($posts => {
-      cy.wrap($posts[0]).click({force: true});
-      cy.wait(500);
-      cy.get("textarea[placeholder='Post title']").type('{selectAll}{del}').type(`${title}`, { force: true });
-      cy.get("header section").children('.gh-publishmenu').click().then(() => {
-        cy.get(".gh-publishmenu-button").click()
-      }
-      )
-    })
-  })
-}
 
 function login() {
   cy.visit(URL + '/ghost');

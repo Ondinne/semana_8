@@ -21,7 +21,5 @@ describe('Escenario 16:', function () {
     cy.wait(1000)
     crearPost(postTitle, postBody);
     cy.wait(1000)
-    publicarPost();
-    cy.wait(1000);
   })
 })
