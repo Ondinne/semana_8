@@ -30,6 +30,19 @@ cypress open
 ```
 Ahora, abrir la prueba monkey.js dando doble clic sobre ella. 
 
+## 2.2. RIPuppet
+Es necesario contar con Node.js y npm.
+
+- En una consola ubicarse en la carpeta 2_Pruebas_reconocimiento\RIPuppet
+- Ejecutar el comando ```npm install```
+- Ejecutar el comando ```node index.js``` para correr la prueba
+
+### Para ver los resultados
+- En una consola ubicarse en la carpeta 2_Pruebas_reconocimiento\RIPuppet\results
+- Ejecutar el comando ```npm install -g http-server```
+- Ejecutar el comando ```http-server```, esto generará un servidor local al que se debe acceder
+- Una vez en el servidor local que suele ser localhost:8080, dar click en "chromium", luego report.html y finalmente dar click en el enlace que aparece con la fecha en la que está corriendo la prueba.
+
 # 3. Ejecución Pruebas E2E
 
 # 4. Ejecución VRT
